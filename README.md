@@ -2,4 +2,4 @@
 
 The McCabe-Thiele method is used to determine the number of equilibrium stages for a distillation column. 
 
-
+<img src="images/front.png">
