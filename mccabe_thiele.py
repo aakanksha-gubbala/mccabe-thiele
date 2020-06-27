@@ -15,7 +15,6 @@ root.maxsize(width=650, height=300)
 def open():
     top = Toplevel()
     top.title('Total Reflux')
-    top.iconbitmap('bitmap.icns')
     top.geometry('380x250')
 
     alpha_label = Label(top, text='alpha', font=('bold, 14'), pady=20)
@@ -23,12 +22,14 @@ def open():
     alpha_entry = Entry(top)
     alpha_entry.grid(row=0, column=1)
 
-    xd_label = Label(top, text='Distillate concentration', font=('bold, 14'), pady=20)
+    xd_label = Label(top, text='Distillate concentration',
+                     font=('bold, 14'), pady=20)
     xd_label.grid(row=1, column=0, sticky=W)
     xd_entry = Entry(top)
     xd_entry.grid(row=1, column=1)
 
-    xb_label = Label(top, text='Bottoms concentration', font=('bold, 14'), pady=20)
+    xb_label = Label(top, text='Bottoms concentration',
+                     font=('bold, 14'), pady=20)
     xb_label.grid(row=2, column=0, sticky=W)
     xb_entry = Entry(top)
     xb_entry.grid(row=2, column=1)
@@ -69,10 +70,12 @@ def open():
             else pyplot.title("Number of stages = %d" % i, size=10)
         pyplot.show()
 
-    button_run = Button(top, text='Run', font=('bold, 14'), width=10, command=total_reflux)
+    button_run = Button(top, text='Run', font=('bold, 14'),
+                        width=10, command=total_reflux)
     button_run.grid(row=4, column=0)
 
-    button_quit = Button(top, text='Close', font=('bold, 14'), width=10, command=top.destroy)
+    button_quit = Button(top, text='Close', font=(
+        'bold, 14'), width=10, command=top.destroy)
     button_quit.grid(row=4, column=1)
 
 
@@ -91,7 +94,8 @@ alpha_label.grid(row=1, column=0, sticky=W)
 alpha_entry = Entry(root)
 alpha_entry.grid(row=1, column=1)
 
-xd_label = Label(root, text='Distillate concentration', font=('bold, 14'), pady=20)
+xd_label = Label(root, text='Distillate concentration',
+                 font=('bold, 14'), pady=20)
 xd_label.grid(row=1, column=2, sticky=W)
 xd_entry = Entry(root)
 xd_entry.grid(row=1, column=3)
@@ -101,7 +105,8 @@ r_label.grid(row=2, column=0, sticky=W)
 r_entry = Entry(root)
 r_entry.grid(row=2, column=1)
 
-xb_label = Label(root, text='Bottoms concentration', font=('bold, 14'), pady=20)
+xb_label = Label(root, text='Bottoms concentration',
+                 font=('bold, 14'), pady=20)
 xb_label.grid(row=2, column=2, sticky=W)
 xb_entry = Entry(root)
 xb_entry.grid(row=2, column=3)
@@ -191,13 +196,15 @@ def mccabe_thiele():
     pyplot.show()
 
 
-button_run = Button(root, text='Run', font=('bold, 14'), width=10, command=mccabe_thiele)
+button_run = Button(root, text='Run', font=('bold, 14'),
+                    width=10, command=mccabe_thiele)
 button_run.grid(row=4, column=0)
 
 button_tr = Button(root, text='Total Reflux', width=10, command=open)
 button_tr.grid(row=4, column=1)
 
-button_quit = Button(root, text='Quit', font=('bold, 14'), width=10, command=root.quit)
+button_quit = Button(root, text='Quit', font=(
+    'bold, 14'), width=10, command=root.quit)
 button_quit.grid(row=4, column=2)
 
 root.mainloop()
