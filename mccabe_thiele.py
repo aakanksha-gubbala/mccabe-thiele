@@ -15,7 +15,6 @@ root.maxsize(width=650, height=300)
 def open():
     top = Toplevel()
     top.title('Total Reflux')
-    top.iconbitmap('bitmap.icns')
     top.geometry('380x250')
 
     alpha_label = Label(top, text='alpha', font=('bold, 14'), pady=20)
