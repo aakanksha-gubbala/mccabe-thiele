@@ -1,0 +1,115 @@
+WindowManager:
+    MainWindow:
+    SecondWindow:
+
+<MainWindow>:
+    name: "main"
+
+    GridLayout:
+        size: root.width, root.height
+        cols:4
+
+        Label:
+            text: "Feed flow rate: "
+
+        TextInput:
+            id: F
+            multiline: False
+
+        Label:
+            text: "Feed concentration: "
+
+        TextInput:
+            id: zf
+            multiline: False
+
+        Label:
+            text: "Distillate concentration: "
+
+        TextInput:
+            id: xd
+            multiline: False
+
+        Label:
+            text: "Bottoms concentration: "
+
+        TextInput:
+            id: xb
+            multiline: False
+
+        Label:
+            text: "Alpha: "
+
+        TextInput:
+            id: alpha
+            multiline: False
+
+        Label:
+            text: "Reflux Ratio: "
+
+        TextInput:
+            id: R
+            multiline: False
+
+        Label:
+            text: "Thermal Ratio: "
+
+        TextInput:
+            id: q
+            multiline: False
+
+        Button:
+            text: "Total Reflux"
+            on_release:
+                app.root.current = "second"
+                root.manager.transition.direction = "left"
+
+        GridLayout:
+            cols:2
+
+            Button:
+                text: "Run"
+                on_press: root.mccabe_thiele()
+
+            Button:
+                text: "Quit"
+                on_release:
+                    app.get_running_app().stop()
+
+
+<SecondWindow>:
+    name: "second"
+
+    GridLayout:
+        cols:2
+
+        Label:
+            text: "Alpha: "
+
+        TextInput:
+            id: alpha
+            multiline: False
+
+        Label:
+            text: "Distillate concentration: "
+
+        TextInput:
+            id: xd
+            multiline: False
+
+        Label:
+            text: "Bottoms concentration: "
+
+        TextInput:
+            id: xb
+            multiline: False
+
+        Button:
+            text: "Run"
+            on_press: root.total_reflux()
+
+        Button:
+            text: "Go Back"
+            on_release:
+                app.root.current = "main"
+                root.manager.transition.direction = "right"
