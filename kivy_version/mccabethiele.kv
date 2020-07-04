@@ -6,7 +6,6 @@ WindowManager:
     name: "main"
 
     GridLayout:
-        size: root.width, root.height
         cols:4
 
         Label:
@@ -59,7 +58,9 @@ WindowManager:
             multiline: False
 
         Button:
+            background_color: 0, 0, 0, 1
             text: "Total Reflux"
+            color: 1, 0, 1, 1
             on_release:
                 app.root.current = "second"
                 root.manager.transition.direction = "left"
@@ -68,11 +69,15 @@ WindowManager:
             cols:2
 
             Button:
+                background_color: 0, 0, 0, 1
                 text: "Run"
+                color: 0, 1, 0, 1
                 on_press: root.mccabe_thiele()
 
             Button:
+                background_color: 0, 0, 0, 1
                 text: "Quit"
+                color: 1, 0, 0, 1
                 on_release:
                     app.get_running_app().stop()
 
@@ -105,11 +110,15 @@ WindowManager:
             multiline: False
 
         Button:
+            background_color: 0, 0, 0, 1
             text: "Run"
+            color: 0, 1, 0, 1
             on_press: root.total_reflux()
 
         Button:
+            background_color: 0, 0, 0, 1
             text: "Go Back"
+            color: 1, 0, 1, 1
             on_release:
                 app.root.current = "main"
                 root.manager.transition.direction = "right"

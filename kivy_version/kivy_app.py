@@ -3,12 +3,16 @@ from kivy.app import App
 from kivy.lang import Builder
 from kivy.properties import NumericProperty
 from kivy.uix.screenmanager import Screen, ScreenManager
+from kivy.config import Config
 from matplotlib import pyplot, style
 from scipy.optimize import fsolve
 
+Config.set('graphics', 'width', '650')
+Config.set('graphics', 'height', '250')
+Config.set('graphics', 'resizable', False)
+
 style.use('ggplot')
 
-np.seterr(divide='ignore', invalid='ignore')
 
 class MainWindow(Screen):
     F = NumericProperty(0)
